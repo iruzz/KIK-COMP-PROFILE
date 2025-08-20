@@ -33,11 +33,11 @@
   </nav>
 
   <!-- Navbar kecil -->
-  <nav class="bg-neutral-100 shadow px-4 py-3 sticky top-[72px] z-40">
+  <nav class="bg-neutral-100 shadow px-4 py-5 sticky top-[77px] z-40 flex justify-center items-center">
     <ul class="flex justify-center space-x-6 font-semibold text-gray-700">
       <li><a href="#" @click.prevent="active='company'" :class="active==='company' ? 'text-gray-600 ' : 'hover:text-pink-500'">Company Profile</a></li>
       <li><a href="#" @click.prevent="active='webdev'" :class="active==='webdev' ? 'text-gray-600 ' : 'hover:text-pink-500'">Website Design & Development</a></li>
-      <li><a href="#" @click.prevent="active='product'" :class="active==='product' ? 'text-gray-600 ' : 'hover:text-pink-500'">Product Designs</a></li>
+      <li><a href="#" @click.prevent="active='product'" :class="active==='product' ? 'text-gray-600 ' : 'hover:text-pink-500'">Products Design</a></li>
       <li><a href="#" @click.prevent="active='logo'" :class="active==='logo' ? 'text-gray-600 ' : 'hover:text-pink-500'">Logo</a></li>
       <li><a href="#" @click.prevent="active='feed'" :class="active==='feed' ? 'text-gray-600 ' : 'hover:text-pink-500'">Feed Instagram</a></li>
     </ul>
@@ -45,18 +45,332 @@
 
   <!-- Sections -->
   <section x-show="active==='company'" class="p-10">
-    <h2 class="text-3xl font-bold text-pink-600 mb-4">Company Profile</h2>
-    <p class="text-gray-600">Ini adalah deskripsi tentang company profile...</p>
+   <div class="max-w-6xl mx-auto py-5  px-6" id="company-profile">
+    <!-- Title -->
+
+     <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold text-pink-500 mb-4">Company Profile</h2>
+      <p class="text-lg text-gray-700 max-w-4xl mx-auto">
+        Company profile yang menarik, jelas, dan profesional sangat penting untuk memperkenalkan bisnis Anda kepada calon pelanggan maupun mitra. 
+        Setiap company profile kami rancang secara unik agar sesuai dengan identitas dan nilai bisnis Anda, baik dalam bentuk cetak maupun format digital interaktif.
+        <br><br>
+        Dengan desain yang elegan, copywriting yang komunikatif, serta visual yang relevan, kami membantu bisnis Anda tampil lebih kredibel, profesional, dan mudah diingat. 
+        Company profile bukan hanya dokumen biasa, melainkan <span class="font-semibold text-pink-500">alat branding strategis</span> yang bisa meningkatkan kepercayaan calon klien Anda.
+      </p>
+    </div>
+
+    <!-- Paket Harga -->
+    <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Kami Tawarkan Paket Desain Compro Yang Super Murah</h3>
+    <div class="grid md:grid-cols-3 lg:grid-cols-4 gap-6">
+
+      <!-- Card Paket -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Elite Perhalaman</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 50.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>Minimal 8 Halaman</li>
+          <li>Proses 1-3 Hari</li>
+          <li>Gratis Revisi</li>
+          <li>File Master Lengkap</li>
+          <li>Design Premium</li>
+          <li>Export Pdf/Jpg</li>
+          <li>Design kartu nama, Kop Surat, Logo</li>
+          <li>Website + Hosting + Email 1 Tahun</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Paket Elite -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col border-2 border-pink-500 relative">
+        <span class="absolute top-3 right-3 bg-pink-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Elite</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 350.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>4 Halaman Compro</li>
+          <li>Proses 1-3 Hari</li>
+          <li>Gratis Revisi</li>
+          <li>File Master Lengkap</li>
+          <li>Design Premium</li>
+          <li>Export Pdf/Jpg</li>
+          <li>Design kartu nama, Kop Surat, Logo</li>
+          <li>Website + Hosting + Email 1 Tahun</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Paket Hemat -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Hemat</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 600.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>8 Halaman Compro</li>
+          <li>Proses 1-3 Hari</li>
+          <li>Gratis Revisi</li>
+          <li>File Master Lengkap</li>
+          <li>Design Premium</li>
+          <li>Export Pdf/Jpg</li>
+          <li>Design kartu nama, Kop Surat, Logo</li>
+          <li>Website + Hosting + Email 1 Tahun</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Paket Prioritas -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col border-2 border-pink-500 relative">
+        <span class="absolute top-3 right-3 bg-pink-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Prioritas</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 999.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>10 Halaman Compro</li>
+          <li>1x24 Jam Siap Jadi</li>
+          <li>Gratis Revisi</li>
+          <li>File Master Lengkap</li>
+          <li>Design Premium</li>
+          <li>Export Pdf/Jpg</li>
+          <li>Design kartu nama, Kop Surat, Logo</li>
+          <li>Website + Hosting + Email 1 Tahun</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Tambah paket lain sama kaya di atas (Pro, Bisnis+Web) -->
+
+    </div>
+
+    <!-- Portofolio -->
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Hasil Portofolio Kami</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/compProf.jpg" alt="Portfolio 1" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Company Profile PT Maju Jaya</h4>
+            <p class="text-sm text-gray-600">Profile profesional untuk perusahaan konstruksi.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/compProf.jpg" alt="Portfolio 2" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Company Profile Startup Digital</h4>
+            <p class="text-sm text-gray-600">Desain modern untuk startup teknologi.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/compProf.jpg" alt="Portfolio 3" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Company Profile UMKM</h4>
+            <p class="text-sm text-gray-600">Company profile menarik untuk bisnis retail lokal.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+   
   </section>
 
   <section x-show="active==='webdev'" class="p-10">
-    <h2 class="text-3xl font-bold text-pink-600 mb-4">Website Design & Development</h2>
-    <p class="text-gray-600">Layanan desain dan pengembangan website modern...</p>
-  </section>
+  <div class="max-w-6xl mx-auto py-5 px-6" id="web-development">
+    <!-- Title -->
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold text-pink-500 mb-4">Web Development</h2>
+      <p class="text-lg text-gray-700 max-w-4xl mx-auto">
+        Website adalah wajah digital dari bisnis Anda. Dengan website yang profesional, cepat, dan mobile-friendly, 
+        bisnis Anda dapat menjangkau audiens yang lebih luas dan meningkatkan kredibilitas di mata calon pelanggan. 
+        <br><br>
+        Kami menyediakan layanan <span class="font-semibold text-pink-500">pembuatan website custom</span> 
+        mulai dari company profile, landing page, e-commerce, hingga sistem berbasis web sesuai kebutuhan bisnis Anda. 
+        Setiap website kami rancang dengan desain modern, performa optimal, serta keamanan terbaik.
+        <br><br>
+        Tidak hanya itu, website Anda juga akan dilengkapi dengan optimasi SEO agar mudah ditemukan di mesin pencarian, 
+        integrasi dengan media sosial, dan dashboard admin yang mudah digunakan. 
+        Dengan kami, Anda tidak hanya mendapatkan website, tetapi <span class="font-semibold text-pink-500">solusi digital lengkap</span> 
+        untuk mengembangkan bisnis Anda.
+      </p>
+    </div>
+
+    <!-- Paket Harga -->
+    <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Paket Pembuatan Website</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Paket Basic -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Basic</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 1.500.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>Website Company Profile (5 Halaman)</li>
+          <li>Responsive & Mobile Friendly</li>
+          <li>SEO Basic</li>
+          <li>Domain .com + Hosting 1 Tahun</li>
+          <li>Email Bisnis</li>
+          <li>Gratis Revisi 2x</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Paket Pro -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col border-2 border-pink-500 relative">
+        <span class="absolute top-3 right-3 bg-pink-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Pro</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 3.500.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>Website Custom (10 Halaman)</li>
+          <li>Desain Premium & Animasi</li>
+          <li>SEO Advanced</li>
+          <li>Domain .com + Hosting 1 Tahun</li>
+          <li>Email Bisnis</li>
+          <li>Integrasi Media Sosial</li>
+          <li>Gratis Revisi Unlimited</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Paket E-Commerce -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket E-Commerce</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 6.500.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>Website Toko Online (Unlimited Produk)</li>
+          <li>Payment Gateway & Ongkir Otomatis</li>
+          <li>Dashboard Admin Mudah Digunakan</li>
+          <li>SEO Optimasi Produk</li>
+          <li>Domain + Hosting 1 Tahun</li>
+          <li>Email Bisnis</li>
+          <li>Support & Maintenance 3 Bulan</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+    </div>
+
+    <!-- Portofolio -->
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Hasil Portofolio Website</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/coding.jpg" alt="Portfolio Website 1" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Website Company Profile</h4>
+            <p class="text-sm text-gray-600">Website profesional untuk perusahaan jasa konstruksi.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/coding.jpg" alt="Portfolio Website 2" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Website Startup Digital</h4>
+            <p class="text-sm text-gray-600">Landing page modern untuk startup teknologi.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/coding.jpg" alt="Portfolio Website 3" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Website Toko Online</h4>
+            <p class="text-sm text-gray-600">E-commerce lengkap dengan sistem pembayaran otomatis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 
   <section x-show="active==='product'" class="p-10">
-    <h2 class="text-3xl font-bold text-pink-600 mb-4">Product Designs</h2>
-    <p class="text-gray-600">Desain produk inovatif untuk kebutuhan bisnis Anda...</p>
+ 
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-extrabold text-pink-500 mb-4">Product Design</h2>
+      <p class="text-lg text-gray-700 max-w-4xl mx-auto">
+        Desain produk adalah salah satu elemen penting untuk memperkuat identitas brand Anda. 
+        Kami menghadirkan desain merchandise eksklusif dan kemasan modern yang tidak hanya menarik, 
+        tetapi juga fungsional serta meningkatkan nilai jual produk. 
+        <br><br>
+        Dari <span class="font-semibold text-pink-500">totebag, tumbler, kaos, hingga lanyard</span> dengan branding khusus, 
+        sampai <span class="font-semibold text-pink-500">kemasan kopi, box makanan, dan botol minum</span>, 
+        semua kami desain dengan detail profesional sesuai karakter brand Anda. 
+        <br><br>
+        Dengan desain produk yang tepat, bisnis Anda dapat tampil lebih menonjol, membangun loyalitas pelanggan, 
+        dan menciptakan kesan eksklusif yang membedakan dari kompetitor.
+      </p>
+    </div>
+
+    <!-- Paket Harga -->
+    <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Paket Desain Produk</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      
+      <!-- Paket Merchandise -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Merchandise</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 750.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>Desain Totebag, Tumbler, Kaos</li>
+          <li>3 Konsep Desain</li>
+          <li>Gratis Revisi 3x</li>
+          <li>File Master (AI/PDF/JPG)</li>
+          <li>Mockup Produk</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Paket Kemasan -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col border-2 border-pink-500 relative">
+        <span class="absolute top-3 right-3 bg-pink-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Kemasan</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 1.200.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>Desain Box, Botol, Bungkus Kopi</li>
+          <li>5 Konsep Kemasan Premium</li>
+          <li>Gratis Revisi Unlimited</li>
+          <li>File Master (AI/PDF/JPG)</li>
+          <li>Desain Label + Mockup 3D</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+
+      <!-- Paket Full Branding -->
+      <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
+        <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Full Branding</h4>
+        <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 2.500.000</p>
+        <ul class="text-gray-600 text-sm space-y-1 flex-1">
+          <li>Merchandise + Kemasan</li>
+          <li>10 Konsep Premium</li>
+          <li>File Master Lengkap</li>
+          <li>Mockup Produk 3D</li>
+          <li>Gratis Revisi Unlimited</li>
+          <li>Konsultasi Brand Gratis</li>
+        </ul>
+        <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
+      </div>
+    </div>
+
+    <!-- Portofolio -->
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Hasil Portofolio Product Design</h3>
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/merch1.jpg" alt="Totebag" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Totebag Merchandise </h4>
+            <p class="text-sm text-gray-600">Merchandise eksklusif dengan desain elegan.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/pack1.jpg" alt="Kemasan Kopi" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Kemasan Kopi</h4>
+            <p class="text-sm text-gray-600">Desain bungkus kopi estetik untuk branding produk.</p>
+          </div>
+        </div>
+        <div class="bg-white rounded-xl shadow overflow-hidden">
+          <img src="img/pack2.jpg" alt="Box Makanan" class="w-full h-48 object-cover">
+          <div class="p-4">
+            <h4 class="font-bold text-lg text-gray-800">Box Makanan</h4>
+            <p class="text-sm text-gray-600">Kemasan modern untuk usaha kuliner premium.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+ 
+</section>
+
   </section>
 
   <section x-show="active==='logo'" class="p-10">
