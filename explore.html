@@ -1,66 +1,73 @@
 <!DOCTYPE html>
-<html lang="id" x-data="{ page: 'home' }">
+<html lang="en" x-data="{ active: 'company' }">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Company Profile</title>
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-    nav {
-      background: #222;
-      color: white;
-      padding: 10px;
-      display: flex;
-      gap: 20px;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      cursor: pointer;
-    }
-    nav a.active {
-      border-bottom: 2px solid #f39c12;
-    }
-    .content {
-      padding: 20px;
-    }
-  </style>
+  <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
+<body class="bg-gray-50">
 
-  <!-- Navbar kecil -->
-  <nav>
-    <a :class="{ 'active': page === 'home' }" @click="page = 'home'">Home</a>
-    <a :class="{ 'active': page === 'about' }" @click="page = 'about'">About</a>
-    <a :class="{ 'active': page === 'explore' }" @click="page = 'explore'">Explore</a>
-    <a :class="{ 'active': page === 'contact' }" @click="page = 'contact'">Contact</a>
+  <!-- Navbar gede -->
+  <nav class="flex justify-between items-center px-8 py-5 bg-white shadow sticky top-0 z-50">
+    <div class="flex items-center space-x-4">
+      <img src="image.png" class="w-10 h-10" alt="Logo">
+      <span class="font-extrabold text-2xl text-pink-500 tracking-tight">Dream Weaver</span>
+      <ul class="hidden md:flex space-x-8 ml-8 font-semibold text-gray-700">
+        <li><a href="#" class="hover:text-pink-500">Home</a></li>
+        <li><a href="#" class="hover:text-pink-500">About</a></li>
+        <li><a href="#" class="hover:text-pink-500">Explore</a></li>
+        <li><a href="#" class="hover:text-pink-500">Contact</a></li>
+      </ul>
+    </div>
+    <div class="flex items-center space-x-4">
+      <div class="relative">
+        <input type="text" placeholder="Search..." class="w-64 h-10 pl-5 pr-10 rounded-full bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+        <span class="absolute right-3 top-2 text-pink-400">
+          <img src="search-interface-symbol.png" class="w-5" alt="Search">
+        </span>
+      </div>
+      <a href="#" class="px-5 py-2 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition hidden md:inline-block">Sign Up</a>
+    </div>
   </nav>
 
-  <!-- Konten -->
-  <div class="content">
-    <div x-show="page === 'home'">
-      <h1>Selamat Datang di Home</h1>
-      <p>Ini konten halaman Home.</p>
-    </div>
-    <div x-show="page === 'about'">
-      <h1>Tentang Kami</h1>
-      <p>Ini konten halaman About.</p>
-    </div>
-    <div x-show="page === 'explore'">
-      <h1>Eksplorasi</h1>
-      <p>Ini konten halaman Explore.</p>
-    </div>
-    <div x-show="page === 'contact'">
-      <h1>Kontak</h1>
-      <p>Email: info@company.com</p>
-      <p>Telp: 0812-3456-7890</p>
-    </div>
-  </div>
+  <!-- Navbar kecil -->
+  <nav class="bg-neutral-100 shadow px-4 py-3 sticky top-[72px] z-40">
+    <ul class="flex justify-center space-x-6 font-semibold text-gray-700">
+      <li><a href="#" @click.prevent="active='company'" :class="active==='company' ? 'text-gray-600 ' : 'hover:text-pink-500'">Company Profile</a></li>
+      <li><a href="#" @click.prevent="active='webdev'" :class="active==='webdev' ? 'text-gray-600 ' : 'hover:text-pink-500'">Website Design & Development</a></li>
+      <li><a href="#" @click.prevent="active='product'" :class="active==='product' ? 'text-gray-600 ' : 'hover:text-pink-500'">Product Designs</a></li>
+      <li><a href="#" @click.prevent="active='logo'" :class="active==='logo' ? 'text-gray-600 ' : 'hover:text-pink-500'">Logo</a></li>
+      <li><a href="#" @click.prevent="active='feed'" :class="active==='feed' ? 'text-gray-600 ' : 'hover:text-pink-500'">Feed Instagram</a></li>
+    </ul>
+  </nav>
+
+  <!-- Sections -->
+  <section x-show="active==='company'" class="p-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Company Profile</h2>
+    <p class="text-gray-600">Ini adalah deskripsi tentang company profile...</p>
+  </section>
+
+  <section x-show="active==='webdev'" class="p-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Website Design & Development</h2>
+    <p class="text-gray-600">Layanan desain dan pengembangan website modern...</p>
+  </section>
+
+  <section x-show="active==='product'" class="p-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Product Designs</h2>
+    <p class="text-gray-600">Desain produk inovatif untuk kebutuhan bisnis Anda...</p>
+  </section>
+
+  <section x-show="active==='logo'" class="p-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Logo</h2>
+    <p class="text-gray-600">Logo unik yang merepresentasikan brand Anda...</p>
+  </section>
+
+  <section x-show="active==='feed'" class="p-10">
+    <h2 class="text-3xl font-bold text-pink-600 mb-4">Feed Instagram</h2>
+    <p class="text-gray-600">Konten feed Instagram estetik dan profesional...</p>
+  </section>
 
 </body>
 </html>
