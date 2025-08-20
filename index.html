@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dream Weaver</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gray-50">
+    <!-- Navbar mirip Dribbble -->
+    <nav class="flex justify-between items-center px-8 py-5 bg-white shadow sticky top-0 z-50">
+        <div class="flex items-center space-x-4">
+            <img src="image.png" class="w-10 h-10" alt="Logo">
+            <span class="font-extrabold text-2xl text-pink-500 tracking-tight">Dream Weaver</span>
+            <ul class="hidden md:flex space-x-8 ml-8 font-semibold text-gray-700">
+                <li><a href="#" class="hover:text-pink-500">Home</a></li>
+                <li><a href="#" class="hover:text-pink-500">About</a></li>
+                <li><a href="#" class="hover:text-pink-500">Explore</a></li>
+                <li><a href="#" class="hover:text-pink-500">Contact</a></li>
+            </ul>
+        </div>
+        <div class="flex items-center space-x-4">
+            <div class="relative">
+                <input type="text" placeholder="Search..." class="w-64 h-10 pl-5 pr-10 rounded-full bg-gray-100 border border-gray-200 focus:outline-none focus:ring-2 focus:ring-pink-400 transition">
+                <span class="absolute right-3 top-2 text-pink-400">
+                    <img src="search-interface-symbol.png" class="w-5" alt="Search">
+                </span>
+            </div>
+            <a href="#" class="px-5 py-2 bg-pink-500 text-white rounded-full font-semibold hover:bg-pink-600 transition hidden md:inline-block">Sign Up</a>
+        </div>
+    </nav>
+
+    <!-- Header mirip Dribbble -->
+    <header class="text-center py-16 bg-gradient-to-b from-pink-50 to-transparent pt-18">
+        <h1 class="text-5xl font-extrabold text-gray-900 mb-4">Explore the world’s leading <span class="text-pink-500">creative community</span></h1>
+        <p class="text-xl text-gray-600 mb-8">Showcase your work, get inspired, and connect with designers & artists globally.</p>
+        <a href="#" class="px-8 py-3 bg-pink-500 text-white rounded-full font-bold text-lg hover:bg-pink-600 transition">Get Started</a>
+    </header>
+
+   
+    <!-- Gallery mirip Dribbble -->
+    <main class="max-w-7xl mx-auto px-4">
+            <!-- Gallery Horizontal Scroll -->
+    <section class="py-8">
+
+        <div class="flex overflow-x-auto overflow-y-visible space-x-8 pb-4 px-4 scroll-smooth
+              [&::-webkit-scrollbar]:h-2
+              [&::-webkit-scrollbar-track]:bg-gray-200
+              [&::-webkit-scrollbar-thumb]:bg-pink-400
+              [&::-webkit-scrollbar-thumb]:rounded-full">
+            <!-- Card 1 -->
+            <div class="min-w-[300px] my-4 mx-4 bg-white rounded-2xl shadow hover:shadow-2xl transition transform hover:scale-105 overflow-hidden duration-200 ease-in-out border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Design 1" class="w-full h-64 object-cover">
+                <div class="p-5">
+                    <h2 class="font-bold text-xl text-gray-800">Minimalist Poster</h2>
+                    <p class="text-sm text-gray-500 mt-2">by Jane Doe</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div class="min-w-[300px]  my-4 mx-4 bg-white rounded-2xl shadow hover:shadow-2xl transition transform hover:scale-105 overflow-hidden duration-200 ease-in-out border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1519125323398-675f0ddb6308?auto=format&fit=crop&w=400&q=80" alt="Design 2" class="w-full h-64 object-cover">
+                <div class="p-5">
+                    <h2 class="font-bold text-xl text-gray-800">Creative Branding</h2>
+                    <p class="text-sm text-gray-500 mt-2">by John Smith</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div class="min-w-[300px]  my-4 mx-4 bg-white rounded-2xl shadow hover:shadow-2xl transition transform hover:scale-105 overflow-hidden duration-200 ease-in-out border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1465101046530-73398c7f28ca?auto=format&fit=crop&w=400&q=80" alt="Design 3" class="w-full h-64 object-cover">
+                <div class="p-5">
+                    <h2 class="font-bold text-xl text-gray-800">UI Dashboard</h2>
+                    <p class="text-sm text-gray-500 mt-2">by Alex Lee</p>
+                </div>
+            </div>
+            <!-- Card 4 -->
+            <div class="min-w-[300px]  my-4 mx-4 bg-white rounded-2xl shadow hover:shadow-2xl transition transform hover:scale-105 overflow-hidden duration-200 ease-in-out border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=400&q=80" alt="Design 4" class="w-full h-64 object-cover">
+                <div class="p-5">
+                    <h2 class="font-bold text-xl text-gray-800">Mobile App Concept</h2>
+                    <p class="text-sm text-gray-500 mt-2">by Sara Kim</p>
+                </div>
+            </div>
+            <!-- Tambahkan card lain sesuai kebutuhan -->
+            <div class="min-w-[300px] my-4 mx-4 bg-white rounded-2xl shadow hover:shadow-2xl transition transform hover:scale-105 overflow-hidden duration-200 ease-in-out border border-gray-100">
+                <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" alt="Design 1" class="w-full h-64 object-cover">
+                <div class="p-5">
+                    <h2 class="font-bold text-xl text-gray-800">Minimalist Poster</h2>
+                    <p class="text-sm text-gray-500 mt-2">by Jane Doe</p>
+                </div>
+            </div>
+            </div>
+    </section>
+
+         <!-- Section About mirip Dribbble -->
+    <section class="max-w-3xl mx-auto my-12 bg-white rounded-2xl shadow-lg p-10 text-center">
+        <h2 class="text-3xl font-bold text-pink-500 mb-4">About Dream Weaver</h2>
+        <p class="text-gray-700 text-lg mb-2">
+            Dream Weaver is a creative platform inspired by Dribbble, built to showcase the best works from designers and artists around the world.
+        </p>
+        <p class="text-gray-600">
+            Our mission is to connect, inspire, and empower the creative community by providing a space to share portfolios, discover new trends, and collaborate on innovative projects.
+        </p>
+    </section>
+
+    </main>
+
+    <footer class="bg-white border-t mt-12 py-8 text-center text-gray-400 text-sm">
+        &copy; 2025 Dream Weaver. Inspired by
