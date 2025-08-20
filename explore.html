@@ -1,5 +1,9 @@
 <!DOCTYPE html>
-<html lang="en" x-data="{ active: 'company' }">
+<html lang="en"  x-data="{ active: 'home' }" x-init="
+  if (window.location.hash) {
+    active = window.location.hash.replace('#', '');
+  }
+">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,9 +19,9 @@
       <img src="image.png" class="w-10 h-10" alt="Logo">
       <span class="font-extrabold text-2xl text-pink-500 tracking-tight">Dream Weaver</span>
       <ul class="hidden md:flex space-x-8 ml-8 font-semibold text-gray-700">
-        <li><a href="#" class="hover:text-pink-500">Home</a></li>
-        <li><a href="#" class="hover:text-pink-500">About</a></li>
-        <li><a href="#" class="hover:text-pink-500">Explore</a></li>
+        <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+        <li><a href="about.html" class="hover:text-pink-500">About</a></li>
+        <li><a href="explore.html" class="hover:text-pink-500">Explore</a></li>
         <li><a href="#" class="hover:text-pink-500">Contact</a></li>
       </ul>
     </div>
@@ -44,7 +48,7 @@
   </nav>
 
   <!-- Sections -->
-  <section x-show="active==='company'" class="p-10">
+  <section x-show="active==='company'" class="p-10" id="company">
    <div class="max-w-6xl mx-auto py-5  px-6" id="company-profile">
     <!-- Title -->
 
@@ -168,8 +172,8 @@
    
   </section>
 
-  <section x-show="active==='webdev'" class="p-10">
-  <div class="max-w-6xl mx-auto py-5 px-6" id="web-development">
+  <section x-show="active==='webdev'" class="p-10" id="webdev">
+  <div class="max-w-6xl mx-auto py-28 px-6" id="web-development">
     <!-- Title -->
     <div class="text-center mb-12">
       <h2 class="text-4xl font-extrabold text-pink-500 mb-4">Web Development</h2>
@@ -270,12 +274,14 @@
     </div>
   </div>
 </section>
-
+    
 
   <section x-show="active==='product'" class="p-10">
  
+     <div class="max-w-6xl mx-auto py-5 px-6" id="web-development">
+    <!-- Title -->
     <div class="text-center mb-12">
-      <h2 class="text-4xl font-extrabold text-pink-500 mb-4">Product Design</h2>
+      <h2 class="text-4xl font-extrabold text-pink-500 mb-4">Products Design</h2>
       <p class="text-lg text-gray-700 max-w-4xl mx-auto">
         Desain produk adalah salah satu elemen penting untuk memperkuat identitas brand Anda. 
         Kami menghadirkan desain merchandise eksklusif dan kemasan modern yang tidak hanya menarik, 
@@ -291,10 +297,10 @@
     </div>
 
     <!-- Paket Harga -->
-    <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Paket Desain Produk</h3>
+    <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Paket Pembuatan Design</h3>
     <div class="grid md:grid-cols-3 gap-6">
       
-      <!-- Paket Merchandise -->
+      <!-- Paket Basic -->
       <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
         <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Merchandise</h4>
         <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 750.000</p>
@@ -308,7 +314,7 @@
         <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
       </div>
 
-      <!-- Paket Kemasan -->
+      <!-- Paket Pro -->
       <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col border-2 border-pink-500 relative">
         <span class="absolute top-3 right-3 bg-pink-500 text-white text-xs px-2 py-1 rounded-full">Popular</span>
         <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Kemasan</h4>
@@ -323,12 +329,12 @@
         <a href="#" class="mt-4 py-2 px-4 bg-pink-500 text-white rounded-lg text-center font-semibold hover:bg-pink-600">Pesan Sekarang</a>
       </div>
 
-      <!-- Paket Full Branding -->
+      <!-- Paket E-Commerce -->
       <div class="bg-white rounded-2xl shadow hover:shadow-lg transition p-6 flex flex-col">
         <h4 class="text-xl font-bold text-pink-500 mb-2">Paket Full Branding</h4>
         <p class="text-3xl font-extrabold text-gray-800 mb-4">Rp 2.500.000</p>
         <ul class="text-gray-600 text-sm space-y-1 flex-1">
-          <li>Merchandise + Kemasan</li>
+           <li>Merchandise + Kemasan</li>
           <li>10 Konsep Premium</li>
           <li>File Master Lengkap</li>
           <li>Mockup Produk 3D</li>
@@ -341,33 +347,28 @@
 
     <!-- Portofolio -->
     <div class="mt-16">
-      <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Hasil Portofolio Product Design</h3>
+      <h3 class="text-2xl font-bold text-center mb-8 text-gray-800">Hasil Portofolio Design</h3>
       <div class="grid md:grid-cols-3 gap-6">
         <div class="bg-white rounded-xl shadow overflow-hidden">
-          <img src="img/merch1.jpg" alt="Totebag" class="w-full h-48 object-cover">
+          <img src="img/mock.jpg" alt="Portfolio Website 1" class="w-full h-48 object-cover">
           <div class="p-4">
-            <h4 class="font-bold text-lg text-gray-800">Totebag Merchandise </h4>
+            <h4 class="font-bold text-lg text-gray-800">Totebag Merchandise</h4>
             <p class="text-sm text-gray-600">Merchandise eksklusif dengan desain elegan.</p>
           </div>
         </div>
         <div class="bg-white rounded-xl shadow overflow-hidden">
-          <img src="img/pack1.jpg" alt="Kemasan Kopi" class="w-full h-48 object-cover">
+          <img src="img/coffe.jpg" alt="Portfolio Website 2" class="w-full h-48 object-cover">
           <div class="p-4">
             <h4 class="font-bold text-lg text-gray-800">Kemasan Kopi</h4>
             <p class="text-sm text-gray-600">Desain bungkus kopi estetik untuk branding produk.</p>
           </div>
         </div>
-        <div class="bg-white rounded-xl shadow overflow-hidden">
-          <img src="img/pack2.jpg" alt="Box Makanan" class="w-full h-48 object-cover">
-          <div class="p-4">
-            <h4 class="font-bold text-lg text-gray-800">Box Makanan</h4>
-            <p class="text-sm text-gray-600">Kemasan modern untuk usaha kuliner premium.</p>
-          </div>
+     
         </div>
       </div>
     </div>
   </div>
-
+    
  
 </section>
 
