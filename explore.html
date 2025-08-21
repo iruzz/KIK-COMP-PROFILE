@@ -19,24 +19,35 @@ x-init="
 </head>
 <body class="bg-gray-50" x-data="{
     active: 'company',
-    scrollToSection(id) {
-        this.active = id;
-        this.$nextTick(() => {
-            // pakai requestAnimationFrame agar scroll dijalankan setelah element muncul
-            requestAnimationFrame(() => {
-                const el = document.getElementById(id);
+    init() {
+        // Cek hash di URL
+        const hash = window.location.hash.replace('#','');
+        if (hash) {
+            this.active = hash;
+            // scroll otomatis ke section
+            this.$nextTick(() => {
+                const el = document.getElementById(hash);
                 if (!el) return;
-
                 const navbar = document.querySelector('nav');
                 const offset = navbar ? navbar.offsetHeight + 20 : 0;
                 const y = el.getBoundingClientRect().top + window.scrollY - offset;
                 window.scrollTo({ top: y, behavior: 'smooth' });
             });
+        }
+    },
+    scrollToSection(id) {
+        this.active = id;
+        this.$nextTick(() => {
+            const el = document.getElementById(id);
+            if (!el) return;
+            const navbar = document.querySelector('nav');
+            const offset = navbar ? navbar.offsetHeight + 20 : 0;
+            const y = el.getBoundingClientRect().top + window.scrollY - offset;
+            window.scrollTo({ top: y, behavior: 'smooth' });
         });
     }
-}">
+}" x-init="init()">
 
->
 
   <!-- Navbar gede -->
   <nav class="flex justify-between items-center px-8 py-5 bg-white shadow sticky top-0 z-50">
