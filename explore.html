@@ -1,9 +1,15 @@
 <!DOCTYPE html>
-<html lang="en"  x-data="{ active: 'home' }" x-init="
+<html lang="en" 
+x-data="{
+    active: 'home',
+x-init="
   if (window.location.hash) {
-    active = window.location.hash.replace('#', '');
+    let id = window.location.hash.replace('#', '');
+    scrollToSection(id);
   }
 ">
+
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +17,26 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50">
+<body class="bg-gray-50" x-data="{
+    active: 'company',
+    scrollToSection(id) {
+        this.active = id;
+        this.$nextTick(() => {
+            // pakai requestAnimationFrame agar scroll dijalankan setelah element muncul
+            requestAnimationFrame(() => {
+                const el = document.getElementById(id);
+                if (!el) return;
+
+                const navbar = document.querySelector('nav');
+                const offset = navbar ? navbar.offsetHeight + 20 : 0;
+                const y = el.getBoundingClientRect().top + window.scrollY - offset;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+            });
+        });
+    }
+}">
+
+>
 
   <!-- Navbar gede -->
   <nav class="flex justify-between items-center px-8 py-5 bg-white shadow sticky top-0 z-50">
@@ -39,16 +64,47 @@
   <!-- Navbar kecil -->
   <nav class="bg-neutral-100 shadow px-4 py-5 sticky top-[77px] z-40 flex justify-center items-center">
     <ul class="flex justify-center space-x-6 font-semibold text-gray-700">
-      <li><a href="#" @click.prevent="active='company'" :class="active==='company' ? 'text-gray-600 ' : 'hover:text-pink-500'">Company Profile</a></li>
-      <li><a href="#" @click.prevent="active='webdev'" :class="active==='webdev' ? 'text-gray-600 ' : 'hover:text-pink-500'">Website Design & Development</a></li>
-      <li><a href="#" @click.prevent="active='product'" :class="active==='product' ? 'text-gray-600 ' : 'hover:text-pink-500'">Products Design</a></li>
-      <li><a href="#" @click.prevent="active='logo'" :class="active==='logo' ? 'text-gray-600 ' : 'hover:text-pink-500'">Logo</a></li>
-      <li><a href="#" @click.prevent="active='feed'" :class="active==='feed' ? 'text-gray-600 ' : 'hover:text-pink-500'">Feed Instagram</a></li>
-    </ul>
+  <li>
+    <a href="#" 
+       @click.prevent="scrollToSection('company')" 
+       :class="active==='company' ? 'text-gray-600' : 'hover:text-pink-500'">
+      Company Profile
+    </a>
+  </li>
+  <li>
+    <a href="#" 
+       @click.prevent="scrollToSection('webdev')" 
+       :class="active==='webdev' ? 'text-gray-600' : 'hover:text-pink-500'">
+      Website Design & Development
+    </a>
+  </li>
+  <li>
+    <a href="#" 
+       @click.prevent="scrollToSection('product')" 
+       :class="active==='product' ? 'text-gray-600' : 'hover:text-pink-500'">
+      Products Design
+    </a>
+  </li>
+  <li>
+    <a href="#" 
+       @click.prevent="scrollToSection('logo')" 
+       :class="active==='logo' ? 'text-gray-600' : 'hover:text-pink-500'">
+      Logo
+    </a>
+  </li>
+  <li>
+    <a href="#" 
+       @click.prevent="scrollToSection('feed')" 
+       :class="active==='feed' ? 'text-gray-600' : 'hover:text-pink-500'">
+      Feed Instagram
+    </a>
+  </li>
+</ul>
+
   </nav>
 
   <!-- Sections -->
-  <section x-show="active==='company'" class="p-10" id="company">
+  <section x-show="active==='company'" class="scroll-mt-32 p-10" id="company">
    <div class="max-w-6xl mx-auto py-5  px-6" id="company-profile">
     <!-- Title -->
 
@@ -172,8 +228,8 @@
    
   </section>
 
-  <section x-show="active==='webdev'" class="p-10" id="webdev">
-  <div class="max-w-6xl mx-auto py-28 px-6" id="web-development">
+  <section x-show="active==='webdev'" x-ref="webdev" class="scroll-mt-32 p-10" id="webdev">
+  <div class="max-w-6xl mx-auto py-5 px-6" id="web-development">
     <!-- Title -->
     <div class="text-center mb-12">
       <h2 class="text-4xl font-extrabold text-pink-500 mb-4">Web Development</h2>
@@ -276,7 +332,7 @@
 </section>
     
 
-  <section x-show="active==='product'" class="p-10">
+  <section x-show="active==='product'" class="scroll-mt-32 p-10">
  
      <div class="max-w-6xl mx-auto py-5 px-6" id="web-development">
     <!-- Title -->
